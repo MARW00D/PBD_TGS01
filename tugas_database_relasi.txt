@@ -1,0 +1,12 @@
+mysql -u root -p
+show databases;
+create database pbd_tgs1;
+use (nama_table);
+create table siswa(id_siswa int(5) not null, nama_siswa varchar(40) not null, jk varchar(5), alamat varchar(40));
+create table ruangan(id_ruang int(5) not null, nama_ruangan varchar(40) not null, alamat varchar(40), id_dosen int(5), id_siswa int(5));
+desc siswa;
+desc ruangan;
+alter table siswa change id_siswa id_siswa int(5) primary key auto_increment;
+alter table ruangan add foreign key (id_siswa) references siswa (id_siswa);
+desc siswa;
+desc ruangan;
